@@ -1,13 +1,18 @@
-import { Metadata } from "next";
-
 export const metadata = {
   title: "Home",
 };
 
-export default function Home() {
-  return (
-    <>
-      <h1>hello NextJs!</h1>
-    </>
-  );
+const URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
+
+async function getMovie() {
+  // return await fetch(URL).then((response) => response.json());
+  await new Promise((resolve) => setTimeout(resolve, 10000));
+  const response = await fetch(URL);
+  const json = await response.json();
+  return json;
+}
+
+export default async function HomePage() {
+  const movies = await getMovie();
+  return <div>{JSON.stringify(movies)}</div>;
 }
