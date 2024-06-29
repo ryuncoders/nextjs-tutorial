@@ -1,4 +1,5 @@
-import Link from "next/link";
+import Movie from "../../components/movie";
+import styles from "../../styles/home.module.css";
 
 export const metadata = {
   title: "Home",
@@ -14,17 +15,23 @@ async function getMovie() {
   return json;
 }
 
+interface IMovie {
+  poster_path: string;
+  title: string;
+  id: string;
+}
+
 export default async function HomePage() {
   const movies = await getMovie();
   return (
-    <div>
-      <ul>
-        {movies.map((movie) => (
-          <li key={movie.id}>
-            <Link href={`/movies/${movie.id}`}>{movie.title}</Link>
-          </li>
-        ))}
-      </ul>
+    <div className={styles.container}>
+      {movies.map((movie: IMovie) => (
+        <Movie
+          poster_path={movie.poster_path}
+          title={movie.title}
+          id={movie.id}
+        />
+      ))}
     </div>
   );
 }
