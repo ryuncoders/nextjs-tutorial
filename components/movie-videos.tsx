@@ -1,3 +1,4 @@
+import styles from "../styles/movie-videos.module.css";
 import { API_URL } from "../app/(Home)/page";
 
 async function getVideos(id: string) {
@@ -6,13 +7,26 @@ async function getVideos(id: string) {
   return json;
 }
 
+interface IKey {
+  name: string;
+  key: string;
+  site: string;
+  id: string;
+}
+
 export default async function MovieVideos({ id }: { id: string }) {
   const videos = await getVideos(id);
 
   return (
-    <div>
-      {videos.map((video) => (
-        <li>{video.name}</li>
+    <div className={styles.container}>
+      {videos.map((video: IKey) => (
+        <iframe
+          key={video.id}
+          src={`https://youtube.com/embed/${video.key}`}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          title={video.name}
+        />
       ))}
     </div>
   );

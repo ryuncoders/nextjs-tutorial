@@ -9,7 +9,6 @@ export default async function MovieDetail({
 }) {
   return (
     <div>
-      <h3>movie detail</h3>
       <Suspense fallback={<h6>movie info Loading ...</h6>}>
         <MovieInfo id={id} />
       </Suspense>
