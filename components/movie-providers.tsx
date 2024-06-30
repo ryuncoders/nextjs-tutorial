@@ -9,13 +9,5 @@ async function getProviders(id: string) {
 
 export default async function MovieProviders({ id }: { id: string }) {
   const providers = await getProviders(id);
-  return (
-    <div className={styles.container}>
-      {providers.AT.buy.map((item) => (
-        <div className={styles.item}>
-          <img src={item.logo_path} alt={item.provider_name} />
-        </div>
-      ))}
-    </div>
-  );
+  return <div className={styles.container}>Providers ...</div>;
 }
