@@ -33,6 +33,7 @@ export default async function MovieInfo({ id }: { id: string }) {
           >
             Homepage &rarr;
           </a>
+          <br />
           <Link href={`/movies/${id}/similar`}>Similar Movie &rarr;</Link>
           <MovieProviders id={id} />
         </div>

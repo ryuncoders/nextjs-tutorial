@@ -26,3 +26,24 @@
 .nav ul li:hover {
   transform: scale(1.05);
 }
+
+@media (max-width: 1000px) {
+  .nav {
+    width: 40%;
+  }
+}
+@media (max-width: 800px) {
+  .nav {
+    width: 50%;
+  }
+}
+@media (max-width: 550px) {
+  .nav {
+    width: 60%;
+  }
+}
+@media (max-width: 450px) {
+  .nav {
+    width: 70%;
+  }
+}
