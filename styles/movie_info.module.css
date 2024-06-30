@@ -4,7 +4,6 @@
   gap: 50px;
   width: 80%;
   margin: 0 auto;
-  font-size: 4vw;
 }
 
 .poster {
@@ -32,4 +31,9 @@
 }
 .creditsContainer h1 {
   margin-bottom: 20px;
+}
+@media (max-width: 400px) {
+  .info {
+    font-size: 4vw;
+  }
 }
