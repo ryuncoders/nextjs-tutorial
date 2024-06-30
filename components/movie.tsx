@@ -13,12 +13,12 @@ interface IMovieProps {
 export default function Movie({ poster_path, title, id }: IMovieProps) {
   const router = useRouter();
   const onClick = () => {
-    router.push(`movies/${id}`);
+    router.push(`/movies/${id}`);
   };
   return (
     <div className={styles.movie}>
       <img src={poster_path} alt={title} onClick={onClick} />
-      <Link prefetch href={`movies/${id}`}>
+      <Link prefetch href={`/movies/${id}`}>
         {title}
       </Link>
     </div>

@@ -14,7 +14,7 @@ async function getMovie() {
   return json;
 }
 
-interface IMovie {
+export interface IMovie {
   poster_path: string;
   title: string;
   id: string;

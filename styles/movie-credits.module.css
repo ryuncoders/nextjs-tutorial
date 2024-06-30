@@ -1,0 +1,22 @@
+.container {
+  margin-top: 20px;
+}
+.container h1 {
+  font-size: 4vw;
+  font-weight: 700;
+  margin: 15px;
+}
+.grid {
+  display: flex;
+  overflow-x: scroll;
+}
+.link {
+  margin-right: 5px;
+}
+.link img {
+  border-radius: 15px;
+  place-self: center;
+}
+.link h6 {
+  text-align: center;
+}
